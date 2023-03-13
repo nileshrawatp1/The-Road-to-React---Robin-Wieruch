@@ -19,23 +19,37 @@ const list = [
 ]
 
 
-const App = () => (
-  <div>
-    <h1>My Hacker Stories</h1>
-    <Search />
-    <hr />
-    <h4>Used Map Method</h4>
-    <List />
-  </div>
-)
+function App() {
+  (
+    <div>
+      <h1>My Hacker Stories</h1>
+      <Search />
+      <hr />
+      <h4>Used Map Method</h4>
+      <List />
+    </div>
+  )
+}
 
 
-const Search = () => (
-  <div>
-    <label htmlFor="search">Search : </label>
-    <input type="text" id="search" placeholder="Text" />
-  </div>
-)
+function Search() {
+  const handleChange = (event) => {
+    console.log(event);
+    console.log(event.target.value);
+  }
+  const handleBlur = (event) => {
+    console.log(event);
+    console.log(event.target.value);
+  }
+  return (
+    <div>
+      <label htmlFor="search">Search : </label>
+      <input type="text" id="search" placeholder="Text" onChange={handleChange} />
+      <label htmlFor="blurEvent">On Blur : </label>
+      <input type="text" id="blur" placeholder="When clicked outside the element" onBlur={handleBlur} />
+    </div>
+  )
+}
 
 const List = () => (
   <div>
