@@ -37,10 +37,7 @@ function Search() {
     console.log(event);
     console.log(event.target.value);
   }
-  const handleBlur = (event) => {
-    console.log(event);
-    console.log(event.target.value);
-  }
+
   return (
     <div>
       <label htmlFor="search">Search : </label>
@@ -52,20 +49,22 @@ function Search() {
 const List = (props) => (
   <div>
     <ul>
-      {
-        props.list.map((item) => (
-          <li key={item.objectId}>
-            <span>
-              <a href={item.url}>{item.title}</a>
-            </span>
-            <span>{item.author}</span>
-            <span>{item.num_comments}</span>
-            <span>{item.points}</span>
-          </li>
-        )
-        )
-      }
+      {props.list.map((item) => (
+        <Item key={item.objectId} item={item} />
+      ))}
     </ul>
   </div>
 )
+
+const Item = (props) => (
+  <li>
+    <span>
+      <a href={props.item.url}>{props.item.title}</a>
+    </span>
+    <span>{props.item.author}</span>
+    <span>{props.item.num_comments}</span>
+    <span>{props.item.points}</span>
+  </li>
+)
+
 export default App
