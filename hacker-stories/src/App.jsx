@@ -20,6 +20,11 @@ const App = () => {
       objectId: 1
     }
   ]
+  // ! Callback Function
+  const handleSearch = (event) => {
+    console.log(event.target.value);
+  }
+
   return (
     <div>
       <h1>My Hacker Stories</h1>
