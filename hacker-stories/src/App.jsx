@@ -28,7 +28,7 @@ const App = () => {
   return (
     <div>
       <h1>My Hacker Stories</h1>
-      <Search />
+      <Search onSearch={handleSearch} />
       <hr />
       <h4>List Of Stories</h4>
       <List list={stories} />
