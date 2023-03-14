@@ -20,8 +20,10 @@ const App = () => {
       objectId: 1
     }
   ]
-  // ! Callback Function
+  // ! Callback Function 
+  /// A 
   const handleSearch = (event) => {
+    /// D
     console.log(event.target.value);
   }
 
@@ -37,10 +39,11 @@ const App = () => {
 }
 
 
-const Search = () => {
+const Search = (props) => {
   const [searchTerm, setSearchTerm] = React.useState('');
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
+    props.onSearch(event);
   }
 
   return (
